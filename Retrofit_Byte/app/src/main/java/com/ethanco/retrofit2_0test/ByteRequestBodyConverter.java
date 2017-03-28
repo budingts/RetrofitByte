@@ -16,8 +16,12 @@ import retrofit.Converter;
 
 
 /**
- * Created by 耿 on 2016/9/6.
+ *byte factory
+ *@author:juanqiang
+ *created at:2017/3/28 上午8:29
+ *
  */
+
 public class ByteRequestBodyConverter  implements Converter<byte[], RequestBody> {
     private static final MediaType MEDIA_TYPE = MediaType.parse("application/octet-stream'; charset=UTF-8");
     private static final Charset UTF_8 = Charset.forName("UTF-8");

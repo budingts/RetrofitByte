@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         getByRxJava();
     }
 
@@ -67,29 +66,5 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    private void get() {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        APIService service = retrofit.create(APIService.class);
-
-        service.loadeather("杭州", apiKey).enqueue(new Callback<Weather>() {
-            @Override
-            public void onResponse(Response<Weather> response, Retrofit retrofit) {
-                if (response.body() != null) {
-                    Weather weather = response.body();
-                    Weather.ResultEntity.TodayEntity todayEntiry = weather.getResult().getToday();
-                    Log.i("zhk-MainActivity", "onResponse: 城市:" + todayEntiry.getCity() + " 温度:" + todayEntiry.getTemperature());
-                } else {
-                    Log.e("zhk-MainActivity", "onResponse: body==null");
-                }
-            }
-
-            @Override
-            public void onFailure(Throwable t) {
-                Log.e("zhk-MainActivity", "onFailure: ", t);
-            }
-        });
-    }
+    
 }

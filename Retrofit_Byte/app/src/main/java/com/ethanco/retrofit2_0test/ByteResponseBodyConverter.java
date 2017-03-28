@@ -7,8 +7,12 @@ import java.io.IOException;
 import retrofit.Converter;
 
 /**
- * Created by 耿 on 2016/9/6.
+ *byte factory
+ *@author:juanqiang
+ *created at:2017/3/28 上午8:29
+ *
  */
+
 public class ByteResponseBodyConverter implements Converter<ResponseBody, byte[]> {
     @Override
     public byte[] convert(ResponseBody value) throws IOException {

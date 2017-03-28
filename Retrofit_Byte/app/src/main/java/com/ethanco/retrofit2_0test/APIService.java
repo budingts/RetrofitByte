@@ -9,8 +9,12 @@ import retrofit.http.Query;
 import rx.Observable;
 
 /**
- * Created by Zhk on 2015/12/20.
+ *byte factory
+ *@author:juanqiang
+ *created at:2017/3/28 上午8:29
+ *
  */
+
 public interface APIService {
     @GET("weather")
     Call<Weather> loadeather(@Query("cityname") String cityname,@Query("key") String apiKey);
